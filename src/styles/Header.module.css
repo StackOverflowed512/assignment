@@ -1,59 +1,95 @@
 .header {
-  background-color: white;
-  box-shadow: var(--card-shadow);
+  background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
 }
 
-.nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+.nav-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.logo:hover {
-  color: var(--secondary-color);
-}
-
-.navLinks {
-  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   gap: 2rem;
-  align-items: center;
 }
 
-.navLinks a {
-  color: var(--text-color);
+.nav-list li {
+  position: relative;
+}
+
+.nav-list a {
+  color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s ease;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.navLinks a:hover {
-  color: var(--primary-color);
+.nav-list a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transition: width 0.3s ease;
 }
 
-.logoutBtn {
-  background-color: var(--error-color);
+.nav-list a:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.nav-list a:hover::after {
+  width: 100%;
+}
+
+.nav-list button {
+  background-color: transparent;
+  border: 2px solid #fff;
   color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
   font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-.logoutBtn:hover {
-  transform: translateY(-1px);
-  filter: brightness(110%);
+.nav-list button:hover {
+  background-color: white;
+  color: #4e4376;
+  transform: translateY(-2px);
+}
+
+/* Cart count styling */
+.nav-list a:nth-of-type(1) {
+  font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-list {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .nav-list a, .nav-list button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1rem;
+  }
+  
+  .nav-list {
+    gap: 1rem;
+  }
 }

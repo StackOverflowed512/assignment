@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import styles from "../styles/Header.module.css";
 
 export default function Header({ setIsAuthenticated }) {
     const { cartCount } = useCart();
@@ -12,9 +13,9 @@ export default function Header({ setIsAuthenticated }) {
     };
 
     return (
-        <header className="header">
+        <header className={styles.header}>
             <nav>
-                <ul className="nav-list">
+                <ul className={styles["nav-list"]}>
                     <li>
                         <Link to="/">Home</Link>
                     </li>

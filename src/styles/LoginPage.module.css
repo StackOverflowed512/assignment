@@ -53,60 +53,6 @@
     font-size: 1rem;
 }
 
-.socialLogin {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.socialButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    padding: 0.75rem;
-    border: 1px solid var(--medium-gray);
-    border-radius: 8px;
-    background: white;
-    color: var(--text-color);
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.socialButton:hover {
-    background: var(--light-gray);
-    transform: translateY(-1px);
-}
-
-.socialButton svg {
-    color: var(--text-color);
-}
-
-.divider {
-    display: flex;
-    align-items: center;
-    margin: 1.5rem 0;
-    color: var(--dark-gray);
-    font-size: 0.875rem;
-}
-
-.divider::before,
-.divider::after {
-    content: "";
-    flex: 1;
-    border-bottom: 1px solid var(--medium-gray);
-}
-
-.divider::before {
-    margin-right: 1rem;
-}
-
-.divider::after {
-    margin-left: 1rem;
-}
-
 .loginForm {
     display: flex;
     flex-direction: column;
