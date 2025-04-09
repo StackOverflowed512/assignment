@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import { toast } from 'react-toastify';
 import styles from '../styles/ProductCard.module.css';
 
 export default function ProductCard({ product }) {
@@ -9,7 +8,6 @@ export default function ProductCard({ product }) {
     const handleAddToCart = (e) => {
         e.preventDefault();
         addToCart(product);
-        toast.success('Added to cart!');
     };
 
     return (
