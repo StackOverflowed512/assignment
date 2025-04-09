@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useCart } from "../context/CartContext";
 import CartItem from "../components/CartItem";
+import styles from "../styles/CartPage.module.css";
 
 export default function CartPage() {
     const { cart, cartTotal, clearCart } = useCart();
@@ -13,27 +14,27 @@ export default function CartPage() {
     };
 
     return (
-        <div className="cart-page">
-            <h1>Your Cart</h1>
+        <div className={styles.cartPage}>
+            <h1 className={styles.title}>Your Cart</h1>
             {orderPlaced && (
-                <div className="order-success">
+                <div className={styles.orderSuccess}>
                     <p>Order placed successfully!</p>
                 </div>
             )}
             {cart.length === 0 ? (
-                <p>Your cart is empty</p>
+                <p className={styles.emptyCart}>Your cart is empty</p>
             ) : (
                 <>
-                    <div className="cart-items">
+                    <div className={styles.cartItems}>
                         {cart.map((item) => (
                             <CartItem key={item.id} item={item} />
                         ))}
                     </div>
-                    <div className="cart-summary">
-                        <h3>Total: ${cartTotal.toFixed(2)}</h3>
+                    <div className={styles.cartSummary}>
+                        <h3 className={styles.total}>Total: ${cartTotal.toFixed(2)}</h3>
                         <button
                             onClick={handleCheckout}
-                            className="checkout-btn"
+                            className={styles.checkoutButton}
                         >
                             Checkout
                         </button>

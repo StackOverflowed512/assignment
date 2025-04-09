@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ProductCard from "../components/ProductCard";
+import styles from "../styles/HomePage.module.css";
 
 export default function HomePage() {
     const [products, setProducts] = useState([]);
@@ -48,8 +49,8 @@ export default function HomePage() {
     );
 
     return (
-        <div className="home-page">
-            <div className="filters">
+        <div className={styles.homePage}>
+            <div className={styles.filters}>
                 <select
                     value={selectedCategory}
                     onChange={(e) => setSelectedCategory(e.target.value)}
@@ -70,11 +71,11 @@ export default function HomePage() {
             </div>
 
             {isLoading ? (
-                <div className="loading">Loading products...</div>
+                <div className={styles.loading}>Loading products...</div>
             ) : error ? (
-                <div className="error">{error}</div>
+                <div className={styles.error}>{error}</div>
             ) : (
-                <div className="products-grid">
+                <div className={styles.productsGrid}>
                     {filteredProducts.map((product) => (
                         <ProductCard key={product.id} product={product} />
                     ))}

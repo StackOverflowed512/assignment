@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useCart } from "../context/CartContext";
+import styles from "../styles/ProductDetailPage.module.css";
 
 export default function ProductDetailPage() {
     const { id } = useParams();
@@ -29,24 +30,23 @@ export default function ProductDetailPage() {
         fetchProduct();
     }, [id]);
 
-    if (isLoading)
-        return <div className="loading">Loading product details...</div>;
-    if (error) return <div className="error">{error}</div>;
-    if (!product) return <div>Product not found</div>;
+    if (isLoading) return <div className={styles.loading}>Loading product details...</div>;
+    if (error) return <div className={styles.error}>{error}</div>;
+    if (!product) return <div className={styles.error}>Product not found</div>;
 
     return (
-        <div className="product-detail">
-            <div className="product-images">
+        <div className={styles.productDetail}>
+            <div className={styles.productImages}>
                 <img src={product.image} alt={product.title} />
             </div>
-            <div className="product-info">
-                <h1>{product.title}</h1>
-                <p className="price">${product.price}</p>
-                <p className="category">{product.category}</p>
-                <p className="description">{product.description}</p>
+            <div className={styles.productInfo}>
+                <h1 className={styles.title}>{product.title}</h1>
+                <p className={styles.price}>${product.price}</p>
+                <p className={styles.category}>{product.category}</p>
+                <p className={styles.description}>{product.description}</p>
                 <button
                     onClick={() => addToCart(product)}
-                    className="add-to-cart"
+                    className={styles.addToCart}
                 >
                     Add to Cart
                 </button>

@@ -1,21 +1,33 @@
-import { Link } from "react-router-dom";
-import { useCart } from "../context/CartContext";
+import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
+import { toast } from 'react-toastify';
+import styles from '../styles/ProductCard.module.css';
 
 export default function ProductCard({ product }) {
     const { addToCart } = useCart();
 
+    const handleAddToCart = (e) => {
+        e.preventDefault();
+        addToCart(product);
+        toast.success('Added to cart!');
+    };
+
     return (
-        <div className="product-card">
-            <Link to={`/product/${product.id}`}>
-                <img
-                    src={product.image}
-                    alt={product.title}
-                    className="product-image"
-                />
-                <h3>{product.title}</h3>
-                <p>${product.price}</p>
-            </Link>
-            <button onClick={() => addToCart(product)}>Add to Cart</button>
-        </div>
+        <Link to={`/product/${product.id}`} className={styles.card}>
+            <div className={styles.imageContainer}>
+                <img src={product.image} alt={product.title} />
+                <button 
+                    className={styles.quickAdd}
+                    onClick={handleAddToCart}
+                >
+                    Quick Add
+                </button>
+            </div>
+            <div className={styles.content}>
+                <h3 className={styles.title}>{product.title}</h3>
+                <p className={styles.category}>{product.category}</p>
+                <p className={styles.price}>${product.price}</p>
+            </div>
+        </Link>
     );
 }
