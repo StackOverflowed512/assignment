@@ -72,6 +72,7 @@ ShopStyle is designed for effortless deployment on modern hosting platforms, ens
 
 I am thrilled to present ShopStyle as a demonstration of my front-end development skills and my passion for creating engaging and user-friendly web applications. I am confident that my attention to detail, understanding of React principles, and ability to integrate APIs effectively make me a valuable asset.
 
-**Live Demo:** [Your Vercel/Netlify Live Link Here]
+**Live Demo:** [Click here to try it out](https://shopglam.netlify.app/login)
+
 
 I am excited to discuss ShopStyle further and answer any questions you may have!
