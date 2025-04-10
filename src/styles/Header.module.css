@@ -74,22 +74,27 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .nav-list {
-    justify-content: center;
-    gap: 1.5rem;
+  .header {
+    padding: 1rem;
   }
-  
-  .nav-list a, .nav-list button {
+
+  .nav-list {
+    gap: 1rem;
+  }
+
+  .nav-list a {
     font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .header {
-    padding: 1rem;
-  }
-  
   .nav-list {
-    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .nav-list button {
+    width: 100%;
   }
 }

@@ -210,6 +210,9 @@
     position: relative;
     height: 100%;
     background: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') center/cover no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
 }
 
 .overlay {
@@ -290,16 +293,54 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .imageSection {
+        display: block;
+        min-height: 300px;
+        order: -1;
+    }
+
+    .carouselItem {
+        min-height: 300px;
+    }
+
+    .carouselContent {
+        bottom: 2rem;
+        left: 2rem;
+        right: 2rem;
+        max-width: none;
+    }
+
+    .carouselContent h3 {
+        font-size: 1.75rem;
+    }
+
+    .carouselContent p {
+        font-size: 1rem;
+    }
+}
+
 @media (max-width: 480px) {
-    .loginContainer {
-        padding: 1.5rem;
+    .imageSection {
+        min-height: 250px;
     }
-    
-    .logo {
-        font-size: 2rem;
+
+    .carouselItem {
+        min-height: 250px;
     }
-    
-    .welcomeText {
+
+    .carouselContent {
+        bottom: 1.5rem;
+        left: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .carouselContent h3 {
         font-size: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 }

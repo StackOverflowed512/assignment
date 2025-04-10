@@ -37,8 +37,37 @@
 
 .productsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .homePage {
+    padding: 1.5rem;
+  }
+
+  .filters {
+    padding: 1.5rem;
+    flex-direction: column;
+  }
+
+  .filters select,
+  .filters input {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .homePage {
+    padding: 1rem;
+  }
+
+  .productsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
 .productCard {

@@ -20,7 +20,9 @@ export default function Header({ setIsAuthenticated }) {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/cart">Cart ({cartCount})</Link>
+                        <Link to="/cart">
+                            Cart ({cartCount})
+                        </Link>
                     </li>
                     <li>
                         <button onClick={handleLogout}>Logout</button>
